@@ -1,0 +1,18 @@
+<!-- JavaScript -->
+<script>
+    // Função para redirecionar ao carregar o vídeo
+    function redirectToSecondCode() {
+        window.location.href = "caminho_do_segundo_codigo.html";  // Substitua "caminho_do_segundo_codigo.html" pelo caminho correto
+    }
+
+    // Inicialização da página
+    displayVideosOnPage(1);
+
+    // Restante do seu código...
+
+    // Vídeo e controles
+    const video = document.getElementById("video-player");
+
+    // Evento de carregamento do vídeo para acionar o redirecionamento
+    video.addEventListener("loadeddata", redirectToSecondCode);
+</script>

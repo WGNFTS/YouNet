@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOU WEB</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos embutidos apenas para este exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #0073e6;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        nav {
+            background-color: #005aa7;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            margin: 0 20px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        main h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        main p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .comments-section {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+
+        .comment {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .comment h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .comment p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .comment-form {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #0073e6;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005aa7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>YOU WEB</h1>
+    </header>
+    
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Sobre</a>
+        <a href="#">Recursos</a>
+        <a href="#">Contato</a>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Bem-vindo ao Nosso website!</h2>
+            <p>Melhor website para amadores, e profissionais.</p>
+        </section>
+
+        <section>
+            <h2>Reprodução de Vídeos</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/SELEXeLz6mA" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section>
+            <h2>Sistema de Comentários e Avaliações</h2>
+            <div class="comments-section" id="comments-section">
+                <!-- Comentários serão adicionados aqui -->
+            </div>
+        </section>
+
+        <section class="comment-form">
+            <h3>Deixe seu Comentário</h3>
+            <textarea id="new-comment" placeholder="Escreva seu comentário"></textarea>
+            <button onclick="addComment()">Enviar Comentário</button>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 You Web - Todos os direitos reservados
+    </footer>
+
+    <script>
+        function addComment() {
+            var newComment = document.getElementById("new-comment").value;
+            if (newComment !== "") {
+                var commentDiv = document.createElement("div");
+                commentDiv.className = "comment";
+                commentDiv.innerHTML = '<h3>Novo Usuário</h3><p>' + newComment + '</p>';
+                var commentsSection = document.getElementById("comments-section");
+                commentsSection.insertBefore(commentDiv, commentsSection.firstChild);
+                document.getElementById("new-comment").value = "";
+            }
+        }
+    </script>
+</body>
+</html>
