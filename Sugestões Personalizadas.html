@@ -1,0 +1,34 @@
+<!-- Adicione isso abaixo do conteúdo existente no <body> -->
+
+<div id="user-history">
+    <h2>Histórico de Vídeos Visualizados</h2>
+    <ul id="history-list">
+        <!-- Os vídeos visualizados serão adicionados dinamicamente aqui -->
+    </ul>
+</div>
+
+<!-- JavaScript (Aprimorado) - Adicione isso abaixo do JavaScript existente -->
+
+<script>
+    // (Funções existentes)
+
+    // Nova função para adicionar vídeos ao histórico do usuário
+    function addToHistory(videoTitle) {
+        const historyList = document.getElementById("history-list");
+        const newHistoryItem = document.createElement("li");
+        newHistoryItem.textContent = videoTitle;
+        historyList.appendChild(newHistoryItem);
+    }
+
+    // Modificação na função existente para exibir vídeos na página
+    function displayVideosOnPage(currentPage) {
+        // (Código existente)
+
+        // Adicione a chamada addToHistory para cada vídeo exibido
+        videosToDisplay.forEach((video) => {
+            // (Código existente)
+
+            addToHistory(video.title);
+        });
+    }
+</script>

@@ -1,0 +1,20 @@
+<!-- Adicione isso abaixo do conteúdo existente no <head> -->
+
+<style>
+    body.dark-mode {
+        background-color: #1a1a1a;
+        color: #ffffff;
+    }
+
+    /* Adicione estilos escuros adicionais conforme necessário */
+</style>
+
+<!-- Adicione isso abaixo do JavaScript existente -->
+
+<script>
+    // Nova função para alternar entre modos claro e escuro
+    function toggleDarkMode() {
+        const body = document.body;
+        body.classList.toggle("dark-mode");
+    }
+</script>

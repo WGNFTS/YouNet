@@ -1,0 +1,35 @@
+<!-- Adicione isso abaixo do conteúdo existente no <body> -->
+
+<div id="recommended-videos">
+    <h2>Vídeos Recomendados para Você</h2>
+    <ul id="recommendations-list">
+        <!-- Os vídeos recomendados serão adicionados dinamicamente aqui -->
+    </ul>
+</div>
+
+<!-- JavaScript (Aprimorado) - Adicione isso abaixo do JavaScript existente -->
+
+<script>
+    // (Funções existentes)
+
+    // Nova função para gerar vídeos recomendados com base no histórico do usuário
+    function generateRecommendedVideos() {
+        const recommendationsList = document.getElementById("recommendations-list");
+        recommendationsList.innerHTML = ""; // Limpe a lista antes de adicionar novas recomendações
+
+        // Adicione a lógica para gerar vídeos recomendados com base no histórico do usuário
+        // Por exemplo, utilize algoritmos de recomendação
+
+        // Simulação de recomendações (substitua na implementação real)
+        const recommendedTitles = ["Vídeo Recomendado 1", "Vídeo Recomendado 2", "Vídeo Recomendado 3"];
+
+        recommendedTitles.forEach((title) => {
+            const recommendationItem = document.createElement("li");
+            recommendationItem.textContent = title;
+            recommendationsList.appendChild(recommendationItem);
+        });
+    }
+
+    // Chame a função de geração de recomendações ao carregar a página
+    document.addEventListener("DOMContentLoaded", generateRecommendedVideos);
+</script>

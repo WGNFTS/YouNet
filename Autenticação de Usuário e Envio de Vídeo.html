@@ -1,0 +1,33 @@
+<!-- Adicione isso abaixo do conteúdo existente no <body> -->
+
+<div id="video-details">
+    <h2>Detalhes do Vídeo</h2>
+    <div id="comments-section">
+        <h3>Comentários</h3>
+        <ul id="comments-list">
+            <!-- Os comentários serão adicionados dinamicamente aqui -->
+        </ul>
+        <textarea id="comment-input" placeholder="Digite seu comentário"></textarea>
+        <button onclick="postComment()">Comentar</button>
+    </div>
+</div>
+
+<!-- JavaScript (Aprimorado) - Adicione isso abaixo do JavaScript existente -->
+
+<script>
+    // (Funções existentes)
+
+    // Nova função para postar comentários
+    function postComment() {
+        const commentInput = document.getElementById("comment-input").value;
+
+        // Adicione a lógica para postar comentários, incluindo a adição dinâmica à lista de comentários
+        const commentsList = document.getElementById("comments-list");
+        const newComment = document.createElement("li");
+        newComment.textContent = commentInput;
+        commentsList.appendChild(newComment);
+
+        // Limpe o campo de entrada após o envio do comentário
+        document.getElementById("comment-input").value = "";
+    }
+</script>

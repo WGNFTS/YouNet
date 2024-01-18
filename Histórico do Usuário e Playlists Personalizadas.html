@@ -1,0 +1,55 @@
+<!-- Adicione isso abaixo do conteúdo existente no <body> -->
+
+<div id="user-authentication">
+    <h2>Autenticação de Usuário</h2>
+    <input type="text" id="username-input" placeholder="Nome de usuário">
+    <input type="password" id="password-input" placeholder="Senha">
+    <button onclick="authenticateUser()">Login</button>
+    <button onclick="logoutUser()">Logout</button>
+</div>
+
+<div id="upload-section" style="display: none;">
+    <h2>Envio de Vídeo</h2>
+    <input type="file" id="video-upload" accept="video/*">
+    <button onclick="uploadVideo()">Enviar Vídeo</button>
+</div>
+
+<!-- JavaScript (Aprimorado) - Adicione isso abaixo do JavaScript existente -->
+
+<script>
+    // (Funções existentes)
+
+    let currentUser = null; // Mantenha o controle do usuário atual
+
+    // Nova função para autenticação de usuário
+    function authenticateUser() {
+        const usernameInput = document.getElementById("username-input").value;
+        const passwordInput = document.getElementById("password-input").value;
+
+        // Adicione a lógica de autenticação (simplificada) aqui
+        // Por exemplo, verifique se as credenciais correspondem a um usuário existente
+
+        // Simulação de autenticação bem-sucedida (remova na implementação real)
+        currentUser = usernameInput;
+        document.getElementById("user-authentication").style.display = "none";
+        document.getElementById("upload-section").style.display = "block";
+    }
+
+    // Nova função para logout do usuário
+    function logoutUser() {
+        currentUser = null;
+        document.getElementById("user-authentication").style.display = "block";
+        document.getElementById("upload-section").style.display = "none";
+    }
+
+    // Nova função para upload de vídeo
+    function uploadVideo() {
+        const videoUploadInput = document.getElementById("video-upload");
+        const uploadedVideo = videoUploadInput.files[0];
+
+        // Adicione a lógica para o envio de vídeo (simplificada)
+        // Por exemplo, envie o vídeo para um servidor ou armazene localmente
+
+        alert(`Vídeo "${uploadedVideo.name}" enviado com sucesso por ${currentUser}!`);
+    }
+</script>

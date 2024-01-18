@@ -1,0 +1,43 @@
+<!-- Adicione isso abaixo do conteúdo existente no <body> -->
+
+<div id="add-to-playlist">
+    <h2>Adicionar Vídeo à Playlist</h2>
+    <select id="playlist-select">
+        <!-- As playlists existentes serão adicionadas dinamicamente aqui -->
+    </select>
+    <button onclick="addToSelectedPlaylist()">Adicionar à Playlist</button>
+</div>
+
+<!-- JavaScript (Aprimorado) - Adicione isso abaixo do JavaScript existente -->
+
+<script>
+    // (Funções existentes)
+
+    // Função simulada para obter playlists existentes (substitua na implementação real)
+    function getExistingPlaylists() {
+        return ["Playlist 1", "Playlist 2", "Playlist 3"];
+    }
+
+    // Inicialize a lista de playlists ao carregar a página
+    document.addEventListener("DOMContentLoaded", () => {
+        const playlistSelect = document.getElementById("playlist-select");
+        const existingPlaylists = getExistingPlaylists();
+
+        existingPlaylists.forEach((playlist) => {
+            const option = document.createElement("option");
+            option.value = playlist;
+            option.textContent = playlist;
+            playlistSelect.appendChild(option);
+        });
+    });
+
+    // Nova função para adicionar vídeos à playlist selecionada
+    function addToSelectedPlaylist() {
+        const selectedPlaylist = document.getElementById("playlist-select").value;
+
+        // Adicione a lógica para adicionar vídeos à playlist (simplificada)
+        // Por exemplo, atualize o objeto de playlist armazenado localmente
+
+        alert(`Vídeo adicionado à Playlist "${selectedPlaylist}" com sucesso!`);
+    }
+</script>
