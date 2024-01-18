@@ -1,0 +1,32 @@
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    // Lógica do lado do cliente para interações e exibição de vídeos
+    $(document).ready(() => {
+        // Restante do código...
+
+        // Evento de clique no botão de classificação (por exemplo, curtir)
+        $("#like-button").on("click", () => {
+            // Lógica para incrementar a contagem de curtidas no vídeo
+            // Atualizar a exibição na página
+        });
+
+        // Evento de clique no botão de compartilhamento
+        $("#share-button").on("click", () => {
+            // Lógica para abrir um modal de compartilhamento ou gerar um link de compartilhamento
+            // Exibir o modal ou link na página
+        });
+
+        // Evento de envio de comentário
+        $("#comment-form").submit((event) => {
+            event.preventDefault();
+            
+            // Obter o texto do comentário do formulário
+            const commentText = $("#comment-input").val();
+
+            // Lógica para enviar o comentário para o servidor e atualizar a exibição na página
+        });
+
+        // Restante do código...
+    });
+</script>

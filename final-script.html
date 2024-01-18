@@ -1,0 +1,62 @@
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    // Lógica do lado do cliente para interações e exibição de vídeos
+    $(document).ready(() => {
+        // Restante do código...
+
+        // Obter referência ao elemento de vídeo
+        const video = document.getElementById("video-player");
+
+        // Obter referências aos elementos de controles
+        const playPauseButton = $("#play-pause-button");
+        const volumeSlider = $("#volume-slider");
+        const fullscreenButton = $("#fullscreen-button");
+        const timeElapsed = $("#time-elapsed");
+        const timeTotal = $("#time-total");
+
+        // Tocar ou pausar o vídeo ao clicar no botão de play/pause
+        playPauseButton.on("click", () => {
+            if (video.paused) {
+                video.play();
+                playPauseButton.text("Pause");
+            } else {
+                video.pause();
+                playPauseButton.text("Play");
+            }
+        });
+
+        // Atualizar o volume do vídeo ao ajustar o controle deslizante de volume
+        volumeSlider.on("input", () => {
+            video.volume = volumeSlider.val();
+        });
+
+        // Ativar o modo de tela cheia ao clicar no botão de tela cheia
+        fullscreenButton.on("click", () => {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) {
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            }
+        });
+
+        // Atualizar o tempo decorrido e total do vídeo
+        video.addEventListener("timeupdate", () => {
+            const currentTime = video.currentTime;
+            const duration = video.duration;
+
+            const minutesElapsed = Math.floor(currentTime / 60);
+            const secondsElapsed = Math.floor(currentTime % 60);
+
+            const minutesTotal = Math.floor(duration / 60);
+            const secondsTotal = Math.floor(duration % 60);
+
+            timeElapsed.text(`${minutesElapsed}:${secondsElapsed < 10 ? '0' : ''}${secondsElapsed}`);
+            timeTotal.text(`${minutesTotal}:${secondsTotal}`);
+        });
+
+        // Restante do código...
+    });
+</script>

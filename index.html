@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOU WEB</title>
+    <style>
+        /* Estilos CSS */
+        /* ... Adicione seus estilos aqui ... */
+    </style>
+</head>
+<body>
+    <!-- Conteúdo será gerado dinamicamente pelo servidor -->
+    <div id="content-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        // Lógica do lado do cliente para interações e exibição de vídeos
+        $(document).ready(() => {
+            // Função para carregar vídeos do servidor
+            function loadVideos() {
+                $.get("/videos", (data) => {
+                    displayVideosOnPage(data);
+                });
+            }
+
+            // Inicialização da página
+            loadVideos();
+
+            // Adicionar eventos aos botões
+            $("#prev-button").on("click", () => {
+                // Lógica para página anterior
+                // ...
+            });
+
+            $("#next-button").on("click", () => {
+                // Lógica para próxima página
+                // ...
+            });
+
+            // Outras interações e eventos do usuário
+            // ...
+
+            // Integração com API do YouTube para obter dados adicionais
+            // ...
+
+            // Lógica de reprodução de vídeo e controles
+            // ...
+        });
+    </script>
+
+    <!-- Código Java (Express com EJS para renderização) -->
+    <%
+    // Código Java aqui
+    %>
+</body>
+</html>
